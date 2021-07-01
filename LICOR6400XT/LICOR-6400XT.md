@@ -154,5 +154,5 @@ ggplot(clddata, aes(x = Scion, y = emmean, fill = Scion)) +
   theme(legend.position = "none")  
 ```
 
-![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/da58de113089588074db68d90bfd6dfaa43b5cde/LICOR6400XT/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
