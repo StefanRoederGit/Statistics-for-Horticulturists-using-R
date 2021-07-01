@@ -135,7 +135,7 @@ ggplot(clddata, aes(x = Rootstock, y = emmean, fill = Rootstock)) +
   theme(legend.position = "none")  
 ```
 
-![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/977d3a2f3937902438854cf74ca84208308ce6a3/LICOR6400XT/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 lm.emmGrid <- emmeans(fit, pairwise ~ Scion)
@@ -155,4 +155,4 @@ ggplot(clddata, aes(x = Scion, y = emmean, fill = Scion)) +
 ```
 
 ![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
-https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/977d3a2f3937902438854cf74ca84208308ce6a3/LICOR6400XT/figure-gfm/unnamed-chunk-7-1.png
+
