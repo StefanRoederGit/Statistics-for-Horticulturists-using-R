@@ -1,4 +1,4 @@
-LICOR 6400XT
+LICOR 6400XT - Leaf Gas Exchange
 ================
 Stefan Roeder
 7/1/2021
@@ -7,20 +7,21 @@ Stefan Roeder
 
 We will use a fictional dataset.
 
-Research question: Do scion and rootstock affect leaf gas exchange in
-apple?
+Research question:<br/> Do scion and rootstock affect leaf gas exchange
+in apple?
 
-Explanatory variables: - rootstock (2 levels) - scion (5 levels)
+Explanatory variables:<br/> - Rootstock (2 levels)<br/> - Scion (5
+levels)
 
-Response variables: - Carbon dioxide assimilation rate (Photo) -
-Transpiration rate (Trmmol) - Conductance (Cond)
+Response variables: <br/> - Carbon dioxide assimilation rate (Photo)
+<br/> - Transpiration rate (Trmmol) <br/> - Conductance (Cond)
 
-Experimental design: - subsampling (two readings per tree)
+Experimental design:<br/> - subsampling (two readings per tree)
 
-Note: - I will be using the emmeans package. Thus, the reported means
-are estimated marginal means.
+Note:<br/> - I will be using the emmeans package. Thus, the reported
+means are estimated marginal means.
 
-### Install and Load Required Packages
+#### Install and Load Required Packages
 
 ``` r
 if (!require('nlme')) install.packages('nlme')
@@ -42,13 +43,13 @@ if (!require('ggpubr')) install.packages('ggpubr')
 library('ggpubr')
 ```
 
-### Import Dataset
+#### Import Dataset
 
 ``` r
 mydata <- read.delim(url("https://raw.githubusercontent.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/main/LICOR6400XT/Dataset/LICOR-6400XT.txt"),stringsAsFactors=TRUE)
 ```
 
-### Convert to Factor Variables
+#### Convert to Factor Variables
 
 ``` r
 mydata$Rootstock <- as.factor(mydata$Rootstock)
@@ -56,7 +57,7 @@ mydata$Scion <- as.factor(mydata$Scion)
 mydata$Tree <- as.factor(mydata$Tree)
 ```
 
-### Fit Linear Mixed Model, Run ANOVA, and Perform Multiple Comparision Procedure
+#### Fit Linear Mixed Model, Run ANOVA, and Perform Multiple Comparision Procedure
 
 #### CO2 Assimilation Rate (Photo)
 
@@ -127,7 +128,7 @@ ggplot(clddata, aes(x = Rootstock, y = emmean, fill = Rootstock)) +
   geom_errorbar(aes(ymin = lower.CL, ymax = upper.CL), width = 0.1, position=position_dodge(.9)) +
   theme_bw(base_size = 14) +
   ggtitle("Main Effect: Rootstock") +
-  xlab("Cultivar") +
+  xlab("Rootstock") +
   ylab(~paste("Assimilation rate (", mu, "mol CO"[2], " m"^-2,"s"^-1,")"))+
   ylim(0,25) +
   scale_y_continuous(expand = expansion(mult = c(0, .1))) +
@@ -135,7 +136,7 @@ ggplot(clddata, aes(x = Rootstock, y = emmean, fill = Rootstock)) +
   theme(legend.position = "none")  
 ```
 
-![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/977d3a2f3937902438854cf74ca84208308ce6a3/LICOR6400XT/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 lm.emmGrid <- emmeans(fit, pairwise ~ Scion)
@@ -154,5 +155,4 @@ ggplot(clddata, aes(x = Scion, y = emmean, fill = Scion)) +
   theme(legend.position = "none")  
 ```
 
-![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/da58de113089588074db68d90bfd6dfaa43b5cde/LICOR6400XT/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
-
+![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
