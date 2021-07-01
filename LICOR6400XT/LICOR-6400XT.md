@@ -136,7 +136,8 @@ ggplot(clddata, aes(x = Rootstock, y = emmean, fill = Rootstock)) +
   theme(legend.position = "none")  
 ```
 
-![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/c8f8aa51895f8da7e8e393c4d145cd3396f62285/LICOR6400XT/Figures/unnamed-chunk-7-1.png)<!-- -->
+![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/977d3a2f3937902438854cf74ca84208308ce6a3/LICOR6400XT/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 lm.emmGrid <- emmeans(fit, pairwise ~ Scion)
@@ -155,4 +156,5 @@ ggplot(clddata, aes(x = Scion, y = emmean, fill = Scion)) +
   theme(legend.position = "none")  
 ```
 
-![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/4b84ac6730e7f78514375119d5125e47ac05d13a/LICOR6400XT/Figures/unnamed-chunk-8-1.png)<!-- -->
+![](LICOR-6400XT_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/da58de113089588074db68d90bfd6dfaa43b5cde/LICOR6400XT/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
