@@ -136,7 +136,7 @@ ggplot(clddata, aes(x = Rootstock, y = emmean, fill = Rootstock)) +
   theme(legend.position = "none")  
 ```
 
-![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/108b303923725b18cbfb901e84d8c708c9657791/LICOR6400XT/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/StefanRoederGit/Statistics-for-Horticulturists-using-R/blob/c8f8aa51895f8da7e8e393c4d145cd3396f62285/LICOR6400XT/Figures/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 lm.emmGrid <- emmeans(fit, pairwise ~ Scion)
